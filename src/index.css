@@ -1,0 +1,79 @@
+/* Custom Styles from your styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #6BBAA7;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(107, 186, 167, 0.1);
+    color: #6BBAA7;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #6BBAA7;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.gallery-nav-btn {
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+#lightbox-img {
+  transition: opacity 0.3s ease;
+}
+
+#prev-btn, #next-btn {
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
