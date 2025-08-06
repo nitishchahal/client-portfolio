@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const projects = [
   { id: 1, category: 'web', title: 'E-Commerce Website', description: 'Modern online store with seamless checkout', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', projectUrl: '#', caseStudyUrl: '#' },
-  { id: 2, category: 'app', title: 'Fitness Tracker App', description: 'iOS/Android app for workout tracking', imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', projectUrl: '#', caseStudyUrl: '#' },
+  { id: 2, category: 'app', title: 'Village Inquiry Portal', description: 'Project Goal: Bridging the gap between residents and essential services', imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', projectUrl: 'https://nitishchahal.github.io/Village-Inquiry/', caseStudyUrl: '#' },
   { id: 3, category: 'web', title: 'Weather App', description: 'Complete Weather Report for your city.', imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80', projectUrl: 'https://nitishchahal.github.io/Weather/', caseStudyUrl: '#' },
   { id: 4, category: 'web', title: 'PassWord Generator', description: 'Data visualization platform', imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80', projectUrl: '#', caseStudyUrl: '#' },
   { id: 5, category: 'app', title: 'Travel Planner App', description: 'Trip planning made easy', imageUrl: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', projectUrl: '#', caseStudyUrl: '#' },
@@ -37,7 +37,7 @@ const Portfolio = () => {
           {filteredProjects.map(project => (
             <div key={project.id} className="portfolio-item" data-category={project.category}>
               <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                <img src={project.imageUrl} alt={project.title} className="w-full h-64 object-cover transition duration-500 group-hover:scale-110" />
+                <img src={project.imageUrl} alt={project.title} className="w-full h-64 object-cover transition duration-500 group-hover:scale-110 " />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-6">
                   <h3 className="text-white text-xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition duration-500">{project.title}</h3>
                   <p className="text-gray-300 mb-4 transform translate-y-4 group-hover:translate-y-0 transition duration-500 delay-100">{project.description}</p>

@@ -27,6 +27,12 @@ const galleryData = {
     { src: 'images/nature8.jpg', alt: 'Nature 8' },
     { src: 'images/nature9.jpg', alt: 'Nature 9' },
     { src: 'images/nature10.jpg', alt: 'Nature 10' },
+    { src: 'images/nature11.jpg', alt: 'Nature 11' },
+    { src: 'images/nature12.jpg', alt: 'Nature 12' },
+    { src: 'images/nature13.jpg', alt: 'Nature 13' },
+    { src: 'images/nature14.jpg', alt: 'Nature 14' },
+    { src: 'images/nature15.jpg', alt: 'Nature 15' },
+    { src: 'images/nature16.jpg', alt: 'Nature 16' },
   ]},
   night: { title: 'Night Views', icon: 'fas fa-moon', images: [
     { src: 'images/night1.jpg', alt: 'Night View 1' },
@@ -37,6 +43,8 @@ const galleryData = {
     { src: 'images/night6.jpg', alt: 'Night View 6' },
     { src: 'images/night7.jpg', alt: 'Night View 7' },
     { src: 'images/night8.jpg', alt: 'Night View 8' },
+    { src: 'images/night9.jpg', alt: 'Night View 9' },
+    { src: 'images/night10.jpg', alt: 'Night View 10' },
   ]},
   nss: { title: 'NSS Memories', icon: 'fas fa-hands-helping', images: [
     { src: 'images/nss1.jpg', alt: 'NSS Memory 1' },
