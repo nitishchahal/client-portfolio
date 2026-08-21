@@ -94,7 +94,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/nitish-choudhary-mr-13-jatt/"
+                href="https://www.linkedin.com/in/nitish-choudhary25/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-light-accent dark:hover:text-dark-accent transition"
