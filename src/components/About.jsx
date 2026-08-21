@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import img1 from '/Profile.png';
-import Resume from "/Nitish_Tech_Resume.pdf";
+import Resume from "/NitishChoudhary_SoftwareDeveloper_Resume.pdf";
 
 /* ================= SKILLS DATA ================= */
 const skillsData = [
