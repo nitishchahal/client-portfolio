@@ -5,10 +5,10 @@ import Resume from "/NitishChoudhary_SoftwareDeveloper_Resume.pdf";
 
 /* ================= SKILLS DATA ================= */
 const skillsData = [
-  { name: "HTML/CSS/JS/React", percentage: 90 },
-  { name: "Node/Express/MySQL", percentage: 75 },
+  { name: "HTML/CSS/JS/React/Typescript", percentage: 90 },
+  { name: "Node/Express/MySQL/MongoDB", percentage: 75 },
   { name: "Photography / Videography", percentage: 90 },
-  { name: "DaVinci Resolve/Canva/Figma", percentage: 85 },
+  { name: "DaVinci Resolve/Canva/Figma/Premiere Pro", percentage: 85 },
 ];
 
 /* ================= SKILL BAR ================= */
