@@ -64,7 +64,7 @@ const Header = ({ toggleTheme, theme }) => {
     open: {
       opacity: 1,
       height: "auto",
-      transition: { staggerChildren: 0.08 },
+      transition: { staggerChildren: 0.09 },
     },
   };
 
