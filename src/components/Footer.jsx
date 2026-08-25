@@ -84,7 +84,7 @@ const Footer = () => {
             </div>
 
             {/* Social links */}
-            <div className="flex space-x-4 text-light-textMuted dark:text-dark-textMuted">
+            <div className="flex space-x-3 text-light-textMuted dark:text-dark-textMuted">
               <a
                 href="https://github.com/nitishchahal"
                 target="_blank"
