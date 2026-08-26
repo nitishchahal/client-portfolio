@@ -68,8 +68,8 @@ export const PROJECTS = [
     desc: "A responsive corporate website with modern UI/UX design.",
     image:
       "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
-    projectUrl: "#",
-    githubUrl: "#",
+    projectUrl: "https://swapinfotech.com/",
+    githubUrl: "https://github.com/nitishchahal/Swapinfotech-frontend",
     tech: ["HTML", "CSS", "JavaScript", "Responsive Design"],
 
     details:

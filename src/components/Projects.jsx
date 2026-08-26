@@ -27,8 +27,8 @@ const PROJECTS = [
     image:
       "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1470&q=80",
     icon: Globe,
-    projectUrl: "#",
-    githubUrl: "#",
+    projectUrl: "https://swapinfotech.com/",
+    githubUrl: "https://github.com/nitishchahal/Swapinfotech-frontend",
   },
   {
     id: "ecommerce",
