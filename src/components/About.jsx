@@ -1,189 +1,326 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { FiDownload, FiArrowRight } from "react-icons/fi";
 
-import img1 from '/Profile.png';
+import img1 from "/Profile.png";
 import Resume from "/NitishChoudhary_SoftwareDeveloper_Resume.pdf";
 
-/* ================= SKILLS DATA ================= */
-const skillsData = [
-  { name: "HTML/CSS/JS/React/Typescript", percentage: 90 },
-  { name: "Node/Express/MySQL/MongoDB", percentage: 75 },
-  { name: "Photography / Videography", percentage: 90 },
-  { name: "DaVinci Resolve/Canva/Figma/Premiere Pro", percentage: 85 },
-];
-
-/* ================= SKILL BAR ================= */
-const SkillBar = ({ skillName, percentage }) => {
-  const [fillWidth, setFillWidth] = useState(0);
-  const skillRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFillWidth(percentage);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (skillRef.current) observer.observe(skillRef.current);
-
-    return () => {
-      if (skillRef.current) observer.unobserve(skillRef.current);
-    };
-  }, [percentage]);
-
-  return (
-    <div ref={skillRef}>
-      <div className="flex justify-between mb-1 text-light-text dark:text-dark-text">
-        <span>{skillName}</span>
-        <span>{percentage}%</span>
-      </div>
-
-      <div className="w-full h-3 rounded-full overflow-hidden
-                      bg-light-border dark:bg-dark-border">
-        <div
-          className="
-            h-full rounded-full transition-all duration-1000 ease-out
-            bg-light-accent dark:bg-dark-accent
-          "
-          style={{ width: `${fillWidth}%` }}
-        />
-      </div>
-    </div>
-  );
-};
-
-/* ================= ABOUT SECTION ================= */
 const About = () => {
   return (
     <section
       id="about"
       className="
+        relative
         py-20
-        bg-light-bg dark:bg-dark-bg
+        bg-light-bg
+        dark:bg-dark-bg
+        overflow-hidden
       "
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
-        <h2
+
+        {/* ================= SECTION HEADING ================= */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <p
+            className="
+              text-sm
+              font-semibold
+              tracking-[0.2em]
+              uppercase
+              text-light-accent
+              dark:text-dark-accent
+              mb-3
+            "
+          >
+            Get To Know Me
+          </p>
+
+          <h2
+            className="
+              text-3xl
+              md:text-4xl
+              font-bold
+              font-poppins
+              text-light-text
+              dark:text-dark-text
+            "
+          >
+            About{" "}
+            <span className="text-light-accent dark:text-dark-accent">
+              Me
+            </span>
+          </h2>
+
+          <div
+            className="
+              w-20
+              h-1
+              bg-light-accent
+              dark:bg-dark-accent
+              mx-auto
+              mt-5
+            "
+          />
+        </motion.div>
+
+        {/* ================= MAIN CONTENT ================= */}
+
+        <div
           className="
-            text-3xl md:text-4xl font-bold text-center mb-16 mt-5
-            font-poppins
-            text-light-text dark:text-dark-text
+            flex
+            flex-col
+            md:flex-row
+            items-center
+            gap-12
+            lg:gap-16
           "
         >
-          About{" "}
-          <span className="text-light-accent dark:text-dark-accent">
-            Me
-          </span>
-        </h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Image */}
-          <div className="md:w-1/2">
-            <div
+          {/* ================= PROFILE IMAGE ================= */}
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2"
+          >
+            <div className="relative group max-w-md mx-auto">
+
+              {/* Animated Border */}
+
+              <div
+                className="
+                  absolute
+                  -inset-[1px]
+                  rounded-xl
+                  overflow-hidden
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity
+                  duration-300
+                  pointer-events-none
+                "
+              >
+                <span
+                  className="
+                    absolute
+                    top-0
+                    left-0
+                    w-24
+                    h-[2px]
+                    bg-light-accent
+                    dark:bg-dark-accent
+                    animate-about-border-top
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    top-0
+                    right-0
+                    w-[2px]
+                    h-24
+                    bg-light-accent
+                    dark:bg-dark-accent
+                    animate-about-border-right
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    right-0
+                    w-24
+                    h-[2px]
+                    bg-light-accent
+                    dark:bg-dark-accent
+                    animate-about-border-bottom
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    w-[2px]
+                    h-24
+                    bg-light-accent
+                    dark:bg-dark-accent
+                    animate-about-border-left
+                  "
+                />
+              </div>
+
+              {/* Image */}
+
+              <div
+                className="
+                  relative
+                  rounded-xl
+                  overflow-hidden
+                  border
+                  border-light-border
+                  dark:border-dark-border
+                  transition-all
+                  duration-500
+                  group-hover:-translate-y-1
+                  group-hover:shadow-lg
+                "
+              >
+                <img
+                  src={img1}
+                  alt="Nitish Choudhary"
+                  className="
+                    w-full
+                    rounded-xl
+                    transition-transform
+                    duration-700
+                    group-hover:scale-[1.02]
+                  "
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ================= ABOUT CONTENT ================= */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2"
+          >
+
+            <p
               className="
-                relative group rounded-xl 
-                transition duration-500 hover:scale-105
-               
+                text-sm
+                font-semibold
+                tracking-wider
+                uppercase
+                text-light-accent
+                dark:text-dark-accent
+                mb-3
               "
             >
-              <img
-                src={img1}
-                alt="Nitish Choudhary"
-                className="w-full max-w-md mx-auto rounded-xl"
-              />
+              Full Stack Developer
+            </p>
 
-              {/* <div
-                className="
-                  absolute inset-0 rounded-xl transition duration-500
-                  bg-light-accent/20 dark:bg-dark-accent/20
-                  opacity-0 group-hover:opacity-100
-                "
-              /> */}
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="md:w-1/2">
             <h3
               className="
-                text-2xl font-bold mb-4 font-poppins
-                text-light-text dark:text-dark-text
+                text-2xl
+                md:text-3xl
+                font-bold
+                mb-5
+                font-poppins
+                text-light-text
+                dark:text-dark-text
               "
             >
-              Who am I?
+              Building scalable applications with{" "}
+              <span className="text-light-accent dark:text-dark-accent">
+                modern technology.
+              </span>
             </h3>
 
             <p
               className="
                 mb-6
-                text-light-textMuted dark:text-dark-textMuted
+                leading-7
+                text-light-textMuted
+                dark:text-dark-textMuted
               "
             >
-              I'm a passionate creative professional with expertise in web
-              development, videography, and visual storytelling. With a strong
-              foundation in modern web technologies and a keen eye for visual
-              design, I am dedicated to crafting engaging digital experiences
-              and compelling visual narratives.
+              I'm a Full Stack Developer focused on building modern,
+              scalable, and user-friendly web applications using the
+              MERN stack. I enjoy turning ideas into clean, efficient,
+              and maintainable digital products.
             </p>
 
-            {/* Skills */}
-            <div className="mb-8">
-              <h4
-                className="
-                  text-xl font-semibold mb-4 font-poppins
-                  text-light-text dark:text-dark-text
-                "
-              >
-                My Skills
-              </h4>
+            <p
+              className="
+                mb-8
+                leading-7
+                text-light-textMuted
+                dark:text-dark-textMuted
+              "
+            >
+              My experience spans frontend and backend development,
+              REST API integration, authentication, database management,
+              software design, debugging, and frontend performance
+              optimization.
+            </p>
 
-              <div className="space-y-4">
-                {skillsData.map((skill, index) => (
-                  <SkillBar
-                    key={index}
-                    skillName={skill.name}
-                    percentage={skill.percentage}
-                  />
-                ))}
-              </div>
-            </div>
+            {/* ================= BUTTONS ================= */}
 
-            {/* Buttons */}
             <div className="flex flex-wrap gap-4">
+
               <a
                 href={Resume}
+                download
                 className="
-                  px-6 py-2 rounded-lg font-medium
-                  bg-light-accent text-snow
-                  dark:bg-dark-accent dark:text-charcoal
-                  hover:opacity-90 transition
-                  flex items-center gap-2
+                  px-6
+                  py-2.5
+                  rounded-lg
+                  font-medium
+                  bg-light-accent
+                  text-snow
+                  dark:bg-dark-accent
+                  dark:text-charcoal
+                  hover:opacity-90
+                  transition-all
+                  duration-300
+                  flex
+                  items-center
+                  gap-2
+                  hover:-translate-y-0.5
                 "
               >
-                <i className="fas fa-download"></i> Download CV
+                <FiDownload className="w-4 h-4" />
+                Download CV
               </a>
 
               <a
                 href="#contact"
                 className="
-                  px-6 py-2 rounded-lg font-medium
-                  border border-light-accent text-light-accent
-                  dark:border-dark-accent dark:text-dark-accent
-                  hover:bg-light-accent hover:text-snow
-                  dark:hover:bg-dark-accent dark:hover:text-charcoal
-                  transition
+                  px-6
+                  py-2.5
+                  rounded-lg
+                  font-medium
+                  border
+                  border-light-accent
+                  text-light-accent
+                  dark:border-dark-accent
+                  dark:text-dark-accent
+                  hover:bg-light-accent
+                  hover:text-snow
+                  dark:hover:bg-dark-accent
+                  dark:hover:text-charcoal
+                  transition-all
+                  duration-300
+                  flex
+                  items-center
+                  gap-2
+                  hover:-translate-y-0.5
                 "
               >
                 Hire Me
+                <FiArrowRight className="w-4 h-4" />
               </a>
+
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
