@@ -168,8 +168,8 @@ function App() {
                   <Hero />
                   <About />
                   <Projects />
-                  <Gallery />
                   <Skills />
+                  <Gallery />
                   <Contact />
                   <ServicesShowcase />
                 </>

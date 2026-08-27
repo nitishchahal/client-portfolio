@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 
-import img1 from "/Profile.png";
+import img1 from "/ProfilePic.jpg";
 import Resume from "/NitishChoudhary_SoftwareDeveloper_Resume.pdf";
 
 const About = () => {
@@ -85,113 +85,161 @@ const About = () => {
 
           {/* ================= PROFILE IMAGE ================= */}
 
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="w-full md:w-1/2"
-          >
-            <div className="relative group max-w-md mx-auto">
+          {/* ================= PROFILE IMAGE ================= */}
 
-              {/* Animated Border */}
+<motion.div
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="w-full md:w-1/2 flex justify-center"
+>
+  <div className="relative group">
 
-              <div
-                className="
-                  absolute
-                  -inset-[1px]
-                  rounded-xl
-                  overflow-hidden
-                  opacity-0
-                  group-hover:opacity-100
-                  transition-opacity
-                  duration-300
-                  pointer-events-none
-                "
-              >
-                <span
-                  className="
-                    absolute
-                    top-0
-                    left-0
-                    w-24
-                    h-[2px]
-                    bg-light-accent
-                    dark:bg-dark-accent
-                    animate-about-border-top
-                  "
-                />
+    {/* Animated Circular Border */}
 
-                <span
-                  className="
-                    absolute
-                    top-0
-                    right-0
-                    w-[2px]
-                    h-24
-                    bg-light-accent
-                    dark:bg-dark-accent
-                    animate-about-border-right
-                  "
-                />
+    <div
+      className="
+        absolute
+        -inset-2
+        rounded-full
+        overflow-hidden
+        opacity-0
+        group-hover:opacity-100
+        transition-opacity
+        duration-300
+        pointer-events-none
+      "
+    >
+      {/* Top */}
+      <span
+        className="
+          absolute
+          top-0
+          left-1/2
+          w-24
+          h-[2px]
+          bg-light-accent
+          dark:bg-dark-accent
+          animate-about-border-top
+        "
+      />
 
-                <span
-                  className="
-                    absolute
-                    bottom-0
-                    right-0
-                    w-24
-                    h-[2px]
-                    bg-light-accent
-                    dark:bg-dark-accent
-                    animate-about-border-bottom
-                  "
-                />
+      {/* Right */}
+      <span
+        className="
+          absolute
+          top-1/2
+          right-0
+          w-[2px]
+          h-24
+          bg-light-accent
+          dark:bg-dark-accent
+          animate-about-border-right
+        "
+      />
 
-                <span
-                  className="
-                    absolute
-                    bottom-0
-                    left-0
-                    w-[2px]
-                    h-24
-                    bg-light-accent
-                    dark:bg-dark-accent
-                    animate-about-border-left
-                  "
-                />
-              </div>
+      {/* Bottom */}
+      <span
+        className="
+          absolute
+          bottom-0
+          left-1/2
+          w-24
+          h-[2px]
+          bg-light-accent
+          dark:bg-dark-accent
+          animate-about-border-bottom
+        "
+      />
 
-              {/* Image */}
+      {/* Left */}
+      <span
+        className="
+          absolute
+          top-1/2
+          left-0
+          w-[2px]
+          h-24
+          bg-light-accent
+          dark:bg-dark-accent
+          animate-about-border-left
+        "
+      />
+    </div>
 
-              <div
-                className="
-                  relative
-                  rounded-xl
-                  overflow-hidden
-                  border
-                  border-light-border
-                  dark:border-dark-border
-                  transition-all
-                  duration-500
-                  group-hover:-translate-y-1
-                  group-hover:shadow-lg
-                "
-              >
-                <img
-                  src={img1}
-                  alt="Nitish Choudhary"
-                  className="
-                    w-full
-                    rounded-xl
-                    transition-transform
-                    duration-700
-                    group-hover:scale-[1.02]
-                  "
-                />
-              </div>
-            </div>
-          </motion.div>
+    {/* Outer Ring */}
+
+    <div
+      className="
+        relative
+        w-64
+        h-64
+        md:w-72
+        md:h-72
+        lg:w-80
+        lg:h-80
+        rounded-full
+        p-1
+        bg-light-accent
+        dark:bg-dark-accent
+        transition-all
+        duration-500
+        group-hover:-translate-y-1
+        group-hover:shadow-xl
+      "
+    >
+      {/* Image Container */}
+
+      <div
+        className="
+          w-full
+          h-full
+          rounded-full
+          overflow-hidden
+          bg-light-bg
+          dark:bg-dark-bg
+          border-4
+          border-light-bg
+          dark:border-dark-bg
+        "
+      >
+        <img
+          src={img1}
+          alt="Nitish Choudhary"
+          className="
+            w-full
+            h-full
+            object-cover
+            object-center
+            transition-transform
+            duration-700
+            group-hover:scale-105
+          "
+        />
+      </div>
+    </div>
+
+    {/* Small Decorative Dot */}
+
+    <span
+      className="
+        absolute
+        bottom-5
+        right-5
+        w-5
+        h-5
+        rounded-full
+        bg-light-accent
+        dark:bg-dark-accent
+        border-4
+        border-light-bg
+        dark:border-dark-bg
+        shadow-sm
+      "
+    />
+  </div>
+</motion.div>
 
           {/* ================= ABOUT CONTENT ================= */}
 

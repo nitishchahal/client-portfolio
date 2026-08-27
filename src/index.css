@@ -151,3 +151,76 @@ body {
       0 0 40px rgba(239, 68, 68, 0.4);
   }
 }
+
+@keyframes skill-strike {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(600%);
+  }
+}
+
+.animate-skill-strike {
+  animation: skill-strike 2s linear infinite;
+}
+
+@keyframes about-border-top {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes about-border-right {
+  0% {
+    transform: translateY(-150%);
+  }
+
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+@keyframes about-border-bottom {
+  0% {
+    transform: translateX(150%);
+  }
+
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes about-border-left {
+  0% {
+    transform: translateY(150%);
+  }
+
+  100% {
+    transform: translateY(-300%);
+  }
+}
+
+.animate-about-border-top {
+  animation: about-border-top 2.2s linear infinite;
+}
+
+.animate-about-border-right {
+  animation: about-border-right 2.2s linear infinite;
+  animation-delay: 0.55s;
+}
+
+.animate-about-border-bottom {
+  animation: about-border-bottom 2.2s linear infinite;
+  animation-delay: 1.1s;
+}
+
+.animate-about-border-left {
+  animation: about-border-left 2.2s linear infinite;
+  animation-delay: 1.65s;
+}
