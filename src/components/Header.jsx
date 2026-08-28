@@ -9,6 +9,7 @@ import logoLight from "../Assets/Logo2.png";  // Light mode logo
 const NAV_LINKS = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
+  { name: "Certificates", path: "/certificates" },
   { name: "Projects", path: "/projects" },
   { name: "Gallery", path: "/gallery" },
   { name: "Contact", path: "/contact" },

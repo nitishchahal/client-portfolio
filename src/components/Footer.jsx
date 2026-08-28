@@ -62,6 +62,16 @@ const Footer = () => {
                 About
               </Link>
               <Link
+                to="/certificates"
+                className="
+                  text-light-textMuted dark:text-dark-textMuted
+                  hover:text-light-accent dark:hover:text-dark-accent
+                  transition
+                "
+              >
+                Certificates
+              </Link>
+              <Link
                 to="/portfolio"
                 className="
                   text-light-textMuted dark:text-dark-textMuted

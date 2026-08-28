@@ -284,7 +284,7 @@ export default function Projects() {
             className="text-4xl md:text-6xl font-black tracking-tighter
             text-light-text dark:text-dark-text"
           >
-            College{" "}
+            My{" "}
             <span className="text-light-accent dark:text-dark-accent">
               Projects
             </span>

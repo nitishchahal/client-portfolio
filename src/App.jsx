@@ -107,6 +107,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Certificates from "./components/Certificates";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import ProjectDetails from "./components/ProjectDetails";
@@ -169,6 +170,7 @@ function App() {
                   <About />
                   <Projects />
                   <Skills />
+                  <Certificates />
                   <Gallery />
                   <Contact />
                   <ServicesShowcase />
@@ -176,6 +178,7 @@ function App() {
               }
             />
             <Route path="/about" element={<About />} />
+            <Route path="/certificates" element={<Certificates />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/gallery" element={<Gallery />} />
