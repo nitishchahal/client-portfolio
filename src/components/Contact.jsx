@@ -8,32 +8,38 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     setIsSending(true);
     setFormStatus({ message: "", type: "" });
-
+  
     emailjs
       .sendForm(
-        "service_yu5ybeu",
-        "template_fn27s7i",
+        "service_51rwjke",
+        "template_tsimjzs",
         form.current,
-        "02VVeEUEAX3ncdVXS"
-      )
-      .then(
-        () => {
-          setFormStatus({
-            message: "✅ Message sent successfully!",
-            type: "success",
-          });
-          form.current.reset();
-        },
-        () => {
-          setFormStatus({
-            message: "❌ Failed to send message. Try again later.",
-            type: "error",
-          });
+        {
+          publicKey: "nHcp2nyqHDG7_AAZ4",
         }
       )
-      .finally(() => setIsSending(false));
+      .then(() => {
+        setFormStatus({
+          message: "✅ Message sent successfully!",
+          type: "success",
+        });
+  
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+  
+        setFormStatus({
+          message: `❌ ${error.text || "Failed to send message."}`,
+          type: "error",
+        });
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   return (
