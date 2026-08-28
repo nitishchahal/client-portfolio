@@ -7,14 +7,18 @@ const Footer = () => {
     <footer
       className="
         relative overflow-hidden py-12
-        bg-dark-bg text-snow
+        bg-light-bg text-light-text
+        border-t border-light-border
+        dark:bg-dark-bg dark:text-dark-text
+        dark:border-dark-border
       "
     >
       {/* Subtle premium glow */}
       <div
         className="
           absolute inset-0 pointer-events-none
-          bg-[radial-gradient(circle_at_top_left,_rgba(230,211,177,0.12),transparent_55%)]
+          bg-[radial-gradient(circle_at_top_left,_rgba(74,44,42,0.08),transparent_55%)]
+          dark:bg-[radial-gradient(circle_at_top_left,_rgba(230,211,177,0.12),transparent_55%)]
         "
       ></div>
 
