@@ -107,7 +107,7 @@ const About = () => {
         opacity-0
         group-hover:opacity-100
         transition-opacity
-        duration-300
+        duration-400
         pointer-events-none
       "
     >
