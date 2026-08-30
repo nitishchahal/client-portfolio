@@ -101,7 +101,9 @@
 
 
 
-import React, { useState, useEffect, useCallback } from "react";
+
+
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -118,22 +120,25 @@ import BackToTop from "./components/BackToTop";
 import ScrollToTop from "./ScrollToTop";
 import ServicesShowcase from "./components/ServicesShowcase";
 import Loader from "./components/Loader";
+
 import "./index.css";
 
-
-
-
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") || "dark"
+  );
+
   const [isBackToTopVisible, setIsBackToTopVisible] = useState(false);
 
-  // ✅ NEW: loader state
+  // Loader state
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Apply theme
     document.documentElement.className = theme;
     localStorage.setItem("theme", theme);
 
+    // Back to top visibility
     const handleScroll = () => {
       if (window.pageYOffset > 300) {
         setIsBackToTopVisible(true);
@@ -143,25 +148,43 @@ function App() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Hide loader after 1.5 seconds
+    const loaderTimer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(loaderTimer);
+    };
   }, [theme]);
 
+  // Toggle dark/light theme
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme((prevTheme) =>
+      prevTheme === "dark" ? "light" : "dark"
+    );
   };
 
-  const handleLoaderComplete = useCallback(() => setLoading(false), []);
-
-  if (loading) return <Loader duration={1500} onComplete={handleLoaderComplete} />;
+  // Show loader first
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <Router>
       <div className="bg-gray-50 text-gray-800 dark:bg-dark dark:text-gray-200 font-inter">
-        <Header toggleTheme={toggleTheme} theme={theme} />
+        <Header
+          toggleTheme={toggleTheme}
+          theme={theme}
+        />
 
         <main>
           <ScrollToTop />
+
           <Routes>
+            {/* Home */}
             <Route
               path="/"
               element={
@@ -177,21 +200,54 @@ function App() {
                 </>
               }
             />
-            <Route path="/about" element={<About />} />
-            <Route path="/certificates" element={<Certificates />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetails />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
+
+            {/* Individual Pages */}
+            <Route
+              path="/about"
+              element={<About />}
+            />
+
+            <Route
+              path="/certificates"
+              element={<Certificates />}
+            />
+
+            <Route
+              path="/projects"
+              element={<Projects />}
+            />
+
+            <Route
+              path="/projects/:id"
+              element={<ProjectDetails />}
+            />
+
+            <Route
+              path="/gallery"
+              element={<Gallery />}
+            />
+
+            <Route
+              path="/skills"
+              element={<Skills />}
+            />
+
+            <Route
+              path="/contact"
+              element={<Contact />}
+            />
           </Routes>
         </main>
 
         <Footer />
-        <BackToTop isVisible={isBackToTopVisible} />
+
+        <BackToTop
+          isVisible={isBackToTopVisible}
+        />
       </div>
     </Router>
   );
 }
 
 export default App;
+
