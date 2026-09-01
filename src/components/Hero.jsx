@@ -134,7 +134,7 @@ const Hero = () => {
         >
           <span>
             {/* 🎨 Static Text: Using a nicely muted variation of your core theme styles */}
-            <span className="text-light-textMuted/80 dark:text-dark-textMuted/70 mr-3 md:mr-5">
+            <span className="text-light-textMuted/90 dark:text-dark-textMuted/70 mr-3 md:mr-5">
               Hi, I am
             </span>
             
