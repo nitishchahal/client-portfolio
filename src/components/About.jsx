@@ -184,7 +184,7 @@ const About = () => {
         bg-light-accent
         dark:bg-dark-accent
         transition-all
-        duration-500
+        duration-400
         group-hover:-translate-y-1
         group-hover:shadow-xl
       "
