@@ -213,7 +213,7 @@ const About = () => {
             object-cover
             object-center
             transition-transform
-            duration-700
+            duration-600
             group-hover:scale-105
           "
         />
