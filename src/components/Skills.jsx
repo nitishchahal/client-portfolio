@@ -72,7 +72,7 @@ const skillsData = [
     icon: FaReact,
     skills: [
       {
-        name: "React.js",
+        name: "React",
         icon: FaReact,
       },
       {
