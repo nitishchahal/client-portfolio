@@ -49,7 +49,7 @@ const skillsData = [
         icon: SiTypescript,
       },
       {
-        name: "C++",
+        name: "Cpp",
         icon: SiCplusplus,
       },
       {
